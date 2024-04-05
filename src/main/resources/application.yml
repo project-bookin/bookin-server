@@ -1,0 +1,29 @@
+server:
+  port: ${SPRING_PORT}
+
+spring:
+  datasource:
+    url: ${DB_URL} #????? ???. ???? ?? env ???
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        show-sql: true
+        format_sql: true
+        jdbc:
+          time_zone: Asia/Seoul
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
+      hibernate:
+        SQL: DEBUG
+      type:
+        descriptor:
+          sql:
+            BasicBinder: TRACE
