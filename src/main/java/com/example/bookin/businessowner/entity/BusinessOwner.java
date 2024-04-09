@@ -33,6 +33,8 @@ public class BusinessOwner extends BaseTimeEntity {
     @JoinColumn(name = "member_id")
     private Member member;
 
+    @OneToOne(mappedBy = "business_owner", cascade = CascadeType.ALL)
+    private BusinessOwnerNumber businessOwnerNumber;
     @Builder
     public BusinessOwner(String nickname, List<Store> stores, Member member) {
         this.nickname = nickname;

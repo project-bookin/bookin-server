@@ -31,4 +31,11 @@ public class User extends BaseTimeEntity {
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Booking> bookings = new ArrayList<>();
+
+    @Builder
+    public User(String nickName, Member member, List<Booking> bookings) {
+        this.nickName = nickName;
+        this.member = member;
+        this.bookings = bookings;
+    }
 }
