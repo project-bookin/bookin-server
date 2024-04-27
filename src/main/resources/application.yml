@@ -3,7 +3,7 @@ server:
 
 spring:
   datasource:
-    url: ${DB_URL} #????? ???. ???? ?? env ???
+    url: ${DB_URL} #
     username: ${DB_USERNAME}
     password: ${DB_PASSWORD}
 
@@ -16,6 +16,23 @@ spring:
         format_sql: true
         jdbc:
           time_zone: Asia/Seoul
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: tae195611@gmail.com
+    password: gagy mwlh zifb ajdv
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          connectiontimeout: 5000
+          timeout: 5000
+          writetimeout: 5000
+    auth-code-expiration-millis: 180000  # 30 * 60 * 100 == 3분
+
 logging:
   level:
     org:
@@ -27,3 +44,5 @@ logging:
         descriptor:
           sql:
             BasicBinder: TRACE
+
+
